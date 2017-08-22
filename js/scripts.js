@@ -1,12 +1,23 @@
 $(document).ready(function() {
   $("form#list").submit(function(event) {
+    event.preventDefault();
+
     var groceries = ['item1', 'item2', 'item3', 'item4', 'item5'];
+    var newArray = [];
+
     groceries.forEach(function(grocery) {
       var userInput = $("input#" + grocery).val();
-      $("." + grocery).text(userInput).toUpperCase();
+      newArray.push(userInput.toUpperCase());
     });
 
-        $('#output').show();
-        event.preventDefault();
+    var newArray =newArray.sort();
+
+    newArray.forEach(function(item) {
+      $(".items").append("<li>" + item + "</li>");
+    });
+
+    $("#output").show();
+    $("#list").hide();
+
   });
 });

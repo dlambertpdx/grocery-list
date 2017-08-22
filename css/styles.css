@@ -1,0 +1,14 @@
+#output {
+  display: none;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: FireBrick;
+  color: Bisque;
+}
+
+#output {
+  color: SteelBlue;
+  font-size: 18px;
+}
